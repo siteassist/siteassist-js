@@ -1,3 +1,4 @@
 export * from "@siteassist/core";
 
-export const hello = "world";
+export { useChat } from "@ai-sdk/react";
+export type { UseChatHelpers } from "@ai-sdk/react";
