@@ -1,10 +1,11 @@
 {
-  "name": "@siteassist/core",
-  "description": "Internal package utils used by the SiteAssist SDKs",
+  "name": "@siteassist/react",
+  "description": "SiteAssist React SDKs",
   "version": "0.0.1",
   "keywords": [
     "sitesssist",
     "javascript",
+    "react",
     "ai",
     "rag",
     "assistant"
@@ -16,7 +17,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/siteassist/siteassist-js.git",
-    "directory": "packages/core"
+    "directory": "packages/react"
   },
   "license": "MIT",
   "author": "SiteAssist",
@@ -52,11 +53,10 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "dev": "tsup --watch",
-    "build": "tsup",
-    "gen:types": "openapi-typescript https://api.siteassist.io/v1/openapi -o src/types/api.gen.ts"
+    "build": "tsup"
   },
   "dependencies": {
-    "openapi-fetch": "^0.14.0",
+    "@siteassist/core": "workspace:^",
     "tslib": "catalog:"
   },
   "devDependencies": {

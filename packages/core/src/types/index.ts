@@ -1,5 +1,8 @@
 import type { UIMessage } from "ai";
+
 import type { paths } from "./api.gen";
+
+export * from "./api.gen";
 
 export type Project =
   paths["/get-project"]["get"]["responses"]["200"]["content"]["application/json"];
