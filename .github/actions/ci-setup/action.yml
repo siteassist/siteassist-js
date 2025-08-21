@@ -1,4 +1,5 @@
 name: Setup CI
+description: Use Node.js 20.x, install packages and generate types
 
 runs:
   using: composite
