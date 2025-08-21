@@ -4,6 +4,9 @@ description: Use Node.js 20.x, install packages and generate types
 runs:
   using: composite
   steps:
+    - name: Install PNPM
+      uses: pnpm/action-setup@v4
+
     - name: Setup Node.js 20.x
       uses: actions/setup-node@v4
       with:
