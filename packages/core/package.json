@@ -1,0 +1,87 @@
+{
+  "name": "@siteassist/core",
+  "description": "Internal package utils used by the SiteAssist SDKs",
+  "version": "0.0.1",
+  "keywords": [
+    "sitesssist",
+    "javascript",
+    "ai",
+    "rag",
+    "assistant"
+  ],
+  "homepage": "https://siteassist.io",
+  "bugs": {
+    "url": "https://github.com/siteassist/siteassist-js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siteassist/siteassist-js.git",
+    "directory": "packages/core"
+  },
+  "license": "MIT",
+  "author": "SiteAssist",
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./*": {
+      "import": {
+        "types": "./dist/*.d.mts",
+        "default": "./dist/*.mjs"
+      },
+      "require": {
+        "types": "./dist/*.d.ts",
+        "default": "./dist/*.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "git clean -xdf dist .turbo .cache node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "gen:types": "openapi-typescript https://api.siteassist.io/v1/openapi -o src/types/api.gen.ts"
+  },
+  "devDependencies": {
+    "@siteassist/prettier-config": "workspace:^",
+    "@siteassist/tsconfig": "workspace:^",
+    "@siteassist/eslint-config": "workspace:^",
+    "ai": "catalog:",
+    "openapi-typescript": "^7.9.1",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:peer-react",
+    "react-dom": "catalog:peer-react"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "prettier": "@siteassist/prettier-config"
+}

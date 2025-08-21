@@ -1,20 +1,28 @@
 {
-  "name": "siteassist-js",
+  "name": "@siteassist/siteassist-js",
+  "version": "0.0.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "clean": "turbo run clean && git clean -xdf .turbo node_modules",
+    "format": "turbo run format --continue -- --cache --cache-location .cache/.prettiercache",
+    "format:fix": "turbo run format --continue -- --write --cache --cache-location .cache/.prettiercache",
+    "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
+    "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
+    "gen:types": "pnpm --filter @siteassist/core gen:types"
   },
   "devDependencies": {
-    "prettier": "^3.6.2",
+    "@siteassist/prettier-config": "workspace:^",
+    "prettier": "catalog:",
+    "tsup": "catalog:",
     "turbo": "^2.5.6",
-    "typescript": "5.9.2"
+    "typescript": "catalog:"
   },
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@10.13.1",
   "engines": {
     "node": ">=18"
-  }
+  },
+  "prettier": "@siteassist/prettier-config"
 }

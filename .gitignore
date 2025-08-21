@@ -21,6 +21,9 @@ coverage
 # Vercel
 .vercel
 
+# eslint cache
+.cache
+
 # Build Outputs
 .next/
 out/
@@ -36,3 +39,5 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+
+*.gen.ts
